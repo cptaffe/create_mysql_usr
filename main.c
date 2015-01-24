@@ -21,45 +21,6 @@ enum op_state {
 	TAKE_RMT
 };
 
-static const char *students[] = {
-	"fsallen1",
-	"gwallen",
-	"rpbeck",
-	"babingham",
-	"mtblanton",
-	"accrider",
-	"cxdiemer",
-	"mrdukes",
-	"ncellis",
-	"wxferguson",
-	"hafernandez",
-	"dxgeisert",
-	"tcgoss",
-	"aahall",
-	"slhampton",
-	"tdhaycraft",
-	"cjhayden",
-	"jeheath",
-	"skhill1",
-	"axhouse",
-	"jcjackson3",
-	"kirito", // Alex Jaeger
-	"porter-rockwell", // Dylan Johnson
-	"aslewis",
-	"jmlong",
-	"txmarcoux",
-	"mxmarshall",
-	"rxmiocic",
-	"wjmotley",
-	"bbnewey",
-	"jdray1",
-	"sdrowe",
-	"zkstine",
-	"stvance",
-	"pdwalter",
-	"jdwooldridge"
-};
-
 static void usage(char *name) {
 	fprintf(stderr, "usage: %s (giveth | taketh_away) [local | remote]\n", name);
 }
@@ -153,6 +114,7 @@ int main(int argc, char *argv[]) {
 	char *user_name = malloc(user_name_size);
 	for (int i = 0; getline(&user_name, &user_name_size, stdin) != -1; i++) {
 		size_t len = strlen(user_name);
+		if (len == 0) {continue;} // blank line
 		if (len > 17) {
 			printf("line %d: username too long.\n", i);
 		} else {
