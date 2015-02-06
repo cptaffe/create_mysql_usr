@@ -9,7 +9,7 @@
 // configuration
 #define MYSQL_HOST "sally.host.ualr.edu"
 #define MYSQL_USERNAME "cptaffe"
-#define MYSQL_PASSWORD "T00563742"
+#define MYSQL_PASSWORD "pass"
 #define MYSQL_DB "mysql"
 
 enum op_state {
